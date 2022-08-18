@@ -39,7 +39,7 @@ namespace JWTAuthenticationDemo
                 {
                     new Claim(ClaimTypes.Name, username)
                 }),
-                Expires = DateTime.UtcNow.AddSeconds(15),
+                Expires = DateTime.UtcNow.AddSeconds(20),
                 SigningCredentials = new SigningCredentials(
                                     new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)
             };
@@ -53,7 +53,7 @@ namespace JWTAuthenticationDemo
             var tokenKey = Encoding.ASCII.GetBytes(key);
             var jwtSecurityToken = new JwtSecurityToken(
                     claims: claims,
-                    expires: DateTime.UtcNow.AddSeconds(15),
+                    expires: DateTime.UtcNow.AddSeconds(20),
                     signingCredentials: new SigningCredentials(
                                     new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)
                 );
@@ -93,7 +93,7 @@ namespace JWTAuthenticationDemo
                 {
                     new Claim(ClaimTypes.Name, username)
                 }),
-                Expires = DateTime.UtcNow.AddSeconds(15),
+                Expires = DateTime.UtcNow.AddSeconds(20),
                 SigningCredentials = new SigningCredentials(
                                     new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)
             };
